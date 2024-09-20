@@ -1,4 +1,4 @@
-import 'package:expense_tracker_app/expense_list.dart';
+import 'package:expense_tracker_app/widgets/expenses-list/expense_list.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker_app/models/expense.dart';
 
@@ -20,7 +20,7 @@ class _ExpensesState extends State<Expenses> {
     ),
     Expense(
       title: 'Cinema',
-      amount: 19.99,
+      amount: 11.70,
       date: DateTime.now(),
       category: Category.work,
     )
