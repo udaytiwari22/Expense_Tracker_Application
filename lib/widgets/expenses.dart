@@ -1,3 +1,4 @@
+import 'package:expense_tracker_app/widgets/chart/chart.dart';
 import 'package:expense_tracker_app/widgets/expenses-list/expense_list.dart';
 import 'package:expense_tracker_app/widgets/new_expense.dart';
 import 'package:flutter/material.dart';
@@ -51,13 +52,15 @@ class _ExpensesState extends State<Expenses> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         duration: const Duration(seconds: 5),
-        content: const  Text('Expense Deleted'),
-        action: SnackBarAction(label: 'Undo', onPressed: (){
-          setState(() {
-            _registeredExpenses.insert(expenseIndex, expense);
-            
-          });
-        }),),
+        content: const Text('Expense Deleted'),
+        action: SnackBarAction(
+            label: 'Undo',
+            onPressed: () {
+              setState(() {
+                _registeredExpenses.insert(expenseIndex, expense);
+              });
+            }),
+      ),
     );
   }
 
@@ -84,7 +87,12 @@ class _ExpensesState extends State<Expenses> {
         ],
       ),
       body: Column(
-        children: [const Text('The Chart'), Expanded(child: mainContent)],
+        children: [
+          Chart(expenses: _registeredExpenses),
+          Expanded(
+            child: mainContent,
+          )
+        ],
       ),
     );
   }
