@@ -89,9 +89,7 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         children: [
           Chart(expenses: _registeredExpenses),
-          Expanded(
-            child: mainContent,
-          )
+          Expanded(child: mainContent)
         ],
       ),
     );
